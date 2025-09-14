@@ -14,8 +14,7 @@ This guide will help you set up **Sentient ROMA** on a Windows machine using Doc
    - Download and install: [Git](https://git-scm.com/downloads)
    - Verify installation:
 
-     ```
-     powershell
+     ``
      git --version
      ```
 
@@ -29,7 +28,7 @@ This guide will help you set up **Sentient ROMA** on a Windows machine using Doc
 
 Open **PowerShell** or **VS Code terminal** and run:
 
-```powershell
+```
 git clone https://github.com/sentient-agi/ROMA.git
 cd ROMA
  ```
@@ -40,14 +39,15 @@ Copy the example .env file to a real .env file:
 
 ### Backend `.env`
 
-```copy .env.example .env
+```
+copy .env.example .env
  ```
 
 ## Step 3: Build and Run the Containers
 
 Open **PowerShell** or terminal in the project root and run:
 
-```powershell
+```
 docker compose down -v   # Clean up any old containers
 docker compose up --build
  ```
@@ -58,7 +58,7 @@ You should see frontend and backend starting without errors.
 
 Run the following command to check active containers:
 
-```powershell
+```
 docker ps
 ```
 You should see output similar to this:
@@ -73,7 +73,7 @@ xxxxxxx        sentient-frontend   0.0.0.0:3000->3000/tcp
 2. The frontend should load and connect to the backend automatically.
 3. If you see **“Backend disconnected”**, check the backend logs:
 
-```powershell
+```
 docker logs <backend_container_name>
 ```
 
@@ -82,7 +82,7 @@ docker logs <backend_container_name>
 
 Stop containers:
 
-```powershell
+```
 docker compose down
 ```
 Start containers in the background:
