@@ -10,10 +10,10 @@ This guide will help you set up **Sentient ROMA** on a Windows machine using Doc
    - Download and install: [Docker Desktop](https://www.docker.com/products/docker-desktop)
    - Make sure Docker is running after installation.
    - verify installation
-  ```
-  docker --version
-docker compose version
- ```
+   ```
+   docker --version
+   docker compose version
+   ```
 
 2. **Git**
    - Download and install: [Git](https://git-scm.com/downloads)
