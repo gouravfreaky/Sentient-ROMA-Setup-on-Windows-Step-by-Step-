@@ -79,7 +79,7 @@ docker logs <backend_container_name>
 
 ## Step 8: Useful Docker Commands
 
-- **Stop containers:**
+Stop containers:
 
 ```powershell
 docker compose down
