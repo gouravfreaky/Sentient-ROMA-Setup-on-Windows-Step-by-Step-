@@ -31,3 +31,14 @@ Open **PowerShell** or **VS Code terminal** and run:
 ```powershell
 git clone https://github.com/sentient-agi/ROMA.git
 cd ROMA
+
+## Step 2: Set Up `.env` Files
+
+Create or edit `.env` files for **backend** and **frontend**.
+
+### Backend `.env`
+
+```env
+PORT=5000
+HOST=0.0.0.0
+OPENAI_API_KEY=your_openai_api_key_here
