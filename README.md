@@ -35,63 +35,14 @@ cd ROMA
 
 ## Step 2: Set Up `.env` Files
 
-Create or edit `.env` files for **backend** and **frontend**.
+Copy the example .env file to a real .env file:
 
 ### Backend `.env`
 
-```env
-PORT=5000
-HOST=0.0.0.0
-OPENAI_API_KEY=your_openai_api_key_here
+```copy .env.example .env
  ```
 
-## Step 3: Fix Windows Line Endings for Backend Scripts
-
-Windows can introduce **CRLF line endings**, which break Linux containers.
-
-### Option A: Using VS Code
-
-1. Open each backend `.sh` file (`startup.sh`, `entrypoint.sh`, etc.) in VS Code.
-2. In the bottom-right corner of VS Code, change `CRLF` → `LF`.
-3. Save the file.
-
-### Option B: Using PowerShell to Fix All Scripts at Once
-
-Run this in the project root:
-
-```powershell
-Get-ChildItem -Path . -Recurse -Include *.sh | ForEach-Object {
-    (Get-Content $_.FullName) -replace "`r","" | Set-Content -NoNewline $_.FullName
-}
- ```
-
-⚠️ This will remove all Windows carriage returns (\r) from your shell scripts to ensure they run correctly inside Linux containers.
-
-## Step 4: Ensure `docker-compose.yml` Is Correct
-
-Check that the backend service has **ports exposed**:
-
-```yaml
-services:
-  backend:
-    build: ./backend
-    env_file:
-      - .env
-    ports:
-      - "5000:5000"
-  frontend:
-    build: ./frontend
-    env_file:
-      - .env
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
- ```
-
-⚠️ Make sure the backend ports match the PORT value in your backend .env file and the frontend is set to connect to the correct backend URL.
-
-## Step 5: Build and Run the Containers
+## Step 3: Build and Run the Containers
 
 Open **PowerShell** or terminal in the project root and run:
 
@@ -99,7 +50,7 @@ Open **PowerShell** or terminal in the project root and run:
 docker compose down -v   # Clean up any old containers
 docker compose up --build
  ```
-The first run may take some time to build images.
+The first run may take some time to build.
 You should see frontend and backend starting without errors.
 
 ## Step 6: Verify Containers Are Running
