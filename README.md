@@ -14,7 +14,8 @@ This guide will help you set up **Sentient ROMA** on a Windows machine using Doc
    - Download and install: [Git](https://git-scm.com/downloads)
    - Verify installation:
 
-     ```powershell
+     ```
+     powershell
      git --version
      ```
 
