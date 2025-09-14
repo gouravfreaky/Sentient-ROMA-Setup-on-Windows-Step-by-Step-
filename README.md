@@ -85,15 +85,17 @@ docker logs <backend_container_name>
 docker compose down
 ```
 Start containers in the background:
-```docker compose up -d
+``` docker compose up -d
 ```
 
 Restart containers:
-```docker compose restart
+```
+docker compose restart
 ```
 
 Rebuild containers after code changes:
-```docker compose down -v
+```
+docker compose down -v
 docker compose up --build
 ```
 
