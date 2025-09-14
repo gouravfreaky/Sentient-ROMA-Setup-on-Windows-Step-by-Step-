@@ -85,7 +85,8 @@ docker logs <backend_container_name>
 docker compose down
 ```
 Start containers in the background:
-``` docker compose up -d
+```
+docker compose up -d
 ```
 
 Restart containers:
