@@ -53,6 +53,7 @@ copy .env.example .env
 Open **PowerShell** or terminal in the project root and run:
 
 ```
+cd docker
 docker compose down -v   # Clean up any old containers
 docker compose up --build
  ```
