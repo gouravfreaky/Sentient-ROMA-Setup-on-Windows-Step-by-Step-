@@ -114,3 +114,45 @@ You should see output similar to this:
 xxxxxxx        sentient-backend    0.0.0.0:5000->5000/tcp
 xxxxxxx        sentient-frontend   0.0.0.0:3000->3000/tcp
 ```
+
+## Step 7: Test the Application
+
+1. Open your browser and go to: [http://localhost:3000](http://localhost:3000)
+2. The frontend should load and connect to the backend automatically.
+3. If you see **“Backend disconnected”**, check the backend logs:
+
+```powershell
+docker logs <backend_container_name>
+```
+
+
+## Step 8: Useful Docker Commands
+
+- **Stop containers:**
+
+```powershell
+docker compose down
+```
+Start containers in the background:
+```docker compose up -d
+```
+
+Restart containers:
+```docker compose restart
+```
+
+Rebuild containers after code changes:
+```docker compose down -v
+docker compose up --build
+```
+
+⚠️ Use these commands to manage your containers efficiently during development.
+
+## Tips
+
+- Always use **LF line endings** for shell scripts on Windows.
+- Ensure **`.env` files`** are correctly set.
+- Use `docker compose logs` to debug issues.
+- For frontend connection issues, confirm `VITE_API_URL` points to `http://localhost:5000`.
+
+
